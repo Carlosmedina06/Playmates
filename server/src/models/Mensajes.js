@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const MensajesSchema = new mongoose.Schema({
   contenido: {
@@ -41,9 +41,9 @@ const MensajesSchema = new mongoose.Schema({
     },
   ],
   reportesRecibidos: {
-    type: number,
+    type: 'number',
     default: 0,
-  }
+  },
 })
 
 MensajesSchema.set('toJSON', {
@@ -54,4 +54,4 @@ MensajesSchema.set('toJSON', {
   },
 })
 
-export default mongoose.model('Mensajes', MensajesSchema);
+export default mongoose.model('Mensajes', MensajesSchema)

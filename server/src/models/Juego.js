@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const JuegoSchema = new mongoose.Schema({
   nombre: {
@@ -17,19 +17,19 @@ const JuegoSchema = new mongoose.Schema({
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Usuario',
-    }
+    },
   ],
   grupos: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Grupo',
-    }
+    },
   ],
   publicaciones: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Publicacion',
-    }
+    },
   ],
 })
 
@@ -41,4 +41,4 @@ JuegoSchema.set('toJSON', {
   },
 })
 
-export default mongoose.model('Juego', JuegoSchema);
+export default mongoose.model('Juego', JuegoSchema)
