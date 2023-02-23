@@ -9,6 +9,9 @@
     "strictFunctionTypes": true,
     "alwaysStrict": true,
     "removeComments": true,
+    "types": [
+      "node"
+    ],
   },
   "include": [
     "/**/*.ts",
