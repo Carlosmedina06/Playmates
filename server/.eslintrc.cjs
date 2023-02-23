@@ -1,58 +1,94 @@
 module.exports = {
-  env: {
-    es2021: true,
-    node: true
+  // styles
+  'editor.fontSize': 12,
+  'editor.letterSpacing': 0,
+  'editor.fontLigatures': true,
+  'editor.tabSize': 2,
+  'editor.minimap.renderCharacters': false,
+  'editor.minimap.maxColumn': 200,
+  'editor.minimap.showSlider': 'always',
+  'editor.renderWhitespace': 'boundary',
+  'editor.hideCursorInOverviewRuler': true,
+  'editor.overviewRulerBorder': false,
+  'editor.renderLineHighlight': 'none',
+  'editor.acceptSuggestionOnCommitCharacter': false,
+  'editor.formatOnSave': true,
+  'editor.codeActionsOnSave': {
+    'source.fixAll.eslint': true,
   },
-  extends: ['standard', 'plugin:prettier/recommended'],
-  overrides: [],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module'
+  'editor.linkedEditing': true,
+  'editor.semanticHighlighting.enabled': false,
+  'explorer.openEditors.visible': 0,
+  'workbench.sideBar.location': 'left',
+  'workbench.editor.enablePreviewFromQuickOpen': false,
+  'workbench.settings.enableNaturalLanguageSearch': false,
+  'terminal.integrated.letterSpacing': 0,
+  'workbench.statusBar.feedback.visible': false,
+  'workbench.colorCustomizations': {
+    'terminal.foreground': '#eff0eb',
+    'terminal.ansiBlack': '#282a36',
+    'terminal.ansiRed': '#ff5c57',
+    'terminal.ansiGreen': '#5af78e',
+    'terminal.ansiYellow': '#f3f99d',
+    'terminal.ansiBlue': '#57c7ff',
+    'terminal.ansiMagenta': '#ff6ac1',
+    'terminal.ansiCyan': '#9aedfe',
+    'terminal.ansiWhite': '#f1f1f0',
+    'terminal.ansiBrightGreen': '#5af78e',
+    'terminal.ansiBrightBlack': '#686868',
+    'terminal.ansiBrightRed': '#ff5c57',
+    'terminal.ansiBrightYellow': '#f3f99d',
+    'terminal.ansiBrightBlue': '#57c7ff',
+    'terminal.ansiBrightMagenta': '#ff6ac1',
+    'terminal.ansiBrightCyan': '#0aedfe',
+    'terminal.ansiBrightWhite': '#eff8eb',
   },
-  plugins: ['prettier', 'import'],
-  rules: {
-    'no-console': 'warn',
-    'no-unused-vars': [
-      'error',
-      {
-        ignoreRestSiblings: true,
-        args: 'after-used',
-        argsIgnorePattern: '^_.*?$',
-        caughtErrors: 'none'
-      }
-    ],
-    'prettier/prettier': [
-      'error',
-      {
-        printWidth: 100,
-        trailingComma: 'all',
-        tabWidth: 2,
-        semi: false,
-        singleQuote: true,
-        bracketSpacing: true,
-        arrowParens: 'always',
-        endOfLine: 'auto'
-      }
-    ],
-    'import/order': [
-      'warn',
-      {
-        groups: ['type', 'builtin', 'object', 'external', 'internal', 'parent', 'sibling', 'index'],
-        pathGroups: [
-          {
-            pattern: '~/**',
-            group: 'external',
-            position: 'after'
-          }
-        ],
-        'newlines-between': 'always'
-      }
-    ],
-    'padding-line-between-statements': [
-      'warn',
-      { blankLine: 'always', prev: '*', next: 'return' },
-      { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
-      { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] }
-    ]
-  }
+  'terminal.integrated.rendererType': 'dom',
+  // general
+  'javascript.updateImportsOnfileMove.enabled': 'never',
+  'window.clickThroughInactive': true,
+  'explorer.confirmDragAndDrop': false,
+  'breadcrumbs.enabled': true,
+  // files
+  'files.exclude': {
+    '**/.git': true,
+    '**/.svn': true,
+    '**/.hg': true,
+    '**/CVS': true,
+    '**/.history': true,
+    '**/.DS_Store': true,
+    '**/Thumbs.db': true,
+    '**/node_modules': true,
+    '.next': true,
+    jspm_packages: true,
+    node_modules: true,
+  },
+  'files.watcherExclude': {
+    '/.git/objects/': true,
+    '/.next/': true,
+    '/node_modules': true,
+    '/.git/subtree-cache/': true,
+    '/node_modules//*': true,
+    '/.hg/store/': true,
+  },
+  // search
+  'search.exclude': {
+    '**/node_modules': true,
+    '**/bower_components': true,
+    '*/.code-search': true,
+    '/.next': true,
+  },
+  'tabnine.experimentalAutoImports': true,
+  'security.workspace.trust.untrustedFiles': 'open',
+  'diffEditor.ignoreTrimWhitespace': false,
+  'javascript.updateImportsOnFileMove.enabled': 'always',
+  'editor.inlineSuggest.enabled': true,
+  'github.copilot.enable': {
+    '*': true,
+    yaml: false,
+    plaintext: false,
+    markdown: true,
+  },
+  'css.lint.unknownAtRules': 'ignore',
+  'explorer.confirmDelete': false,
 }
