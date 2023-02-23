@@ -1,13 +1,13 @@
 module.exports = {
   env: {
     es2021: true,
-    node: true
+    node: true,
   },
   extends: ['standard', 'plugin:prettier/recommended'],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['prettier', 'import'],
   rules: {
@@ -18,8 +18,8 @@ module.exports = {
         ignoreRestSiblings: true,
         args: 'after-used',
         argsIgnorePattern: '^_.*?$',
-        caughtErrors: 'none'
-      }
+        caughtErrors: 'none',
+      },
     ],
     'prettier/prettier': [
       'error',
@@ -31,8 +31,8 @@ module.exports = {
         singleQuote: true,
         bracketSpacing: true,
         arrowParens: 'always',
-        endOfLine: 'auto'
-      }
+        endOfLine: 'auto',
+      },
     ],
     'import/order': [
       'warn',
@@ -42,17 +42,17 @@ module.exports = {
           {
             pattern: '~/**',
             group: 'external',
-            position: 'after'
-          }
+            position: 'after',
+          },
         ],
-        'newlines-between': 'always'
-      }
+        'newlines-between': 'always',
+      },
     ],
     'padding-line-between-statements': [
       'warn',
       { blankLine: 'always', prev: '*', next: 'return' },
       { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
-      { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] }
-    ]
-  }
+      { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
+    ],
+  },
 }
