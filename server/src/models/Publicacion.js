@@ -1,11 +1,6 @@
 import mongoose from 'mongoose'
 
 const PublicacionSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    required: true,
-    unique: true,
-  },
   contenido: {
     type: String,
     required: true,
@@ -37,6 +32,14 @@ const PublicacionSchema = new mongoose.Schema({
   reportes: {
     type: Number,
     default: 0,
+  },
+})
+
+PublicacionSchema.set('toJSON', {
+  transform: (document, returnedObject) => {
+    returnedObject.id = returnedObject._id.toString()
+    delete returnedObject._id
+    delete returnedObject.__v
   },
 })
 
