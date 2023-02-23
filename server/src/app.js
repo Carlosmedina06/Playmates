@@ -4,7 +4,6 @@ import express from 'express'
 import cors from 'cors'
 import { ApolloServer } from '@apollo/server'
 import { expressMiddleware } from '@apollo/server/express4'
-import morgan from 'morgan'
 
 export async function createServer(typeDefs, resolvers) {
   const app = express()
@@ -13,7 +12,7 @@ export async function createServer(typeDefs, resolvers) {
 
   await server.start()
 
-  app.use('/graphql', morgan('dev'), cors(), express.json(), expressMiddleware(server))
+  app.use('/graphql', cors(), express.json(), expressMiddleware(server))
 
   await new Promise((resolve) => serverHttp.listen({ port: 4000 }, resolve))
   // eslint-disable-next-line no-console
