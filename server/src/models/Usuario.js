@@ -1,12 +1,6 @@
 import mongoose from 'mongoose'
 
-
 const UsuarioSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    required: true,
-    unique: true,
-  },
   nombre: String,
   email: {
     type: String,
@@ -19,6 +13,8 @@ const UsuarioSchema = new mongoose.Schema({
   },
   rol: {
     type: String,
+    enum: ['usuario', 'admin'],
+    default: 'usuario',
   },
   imagen: {
     type: String,
@@ -27,16 +23,18 @@ const UsuarioSchema = new mongoose.Schema({
     type: Date,
   },
   fechaRegistro: {
-    type: Date.now,
+    type: Date,
+    default: Date.now(),
   },
   fechaActualizacion: {
     type: Date,
   },
   fechaEliminacion: {
-    type: Date.now,
+    type: Date,
   },
   estado: {
     type: Boolean,
+    default: true,
   },
   juegos: [
     {
@@ -123,8 +121,6 @@ UsuarioSchema.set('toJSON', {
     returnedObject.id = returnedObject._id.toString()
     delete returnedObject._id
     delete returnedObject.__v
-
-    delete returnedObject.password
   },
 })
 
